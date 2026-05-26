@@ -26,33 +26,42 @@ export default function Footer() {
       className="w-full bg-[#1a1a1a] text-white"
       style={{ fontFamily: "var(--font-pretendard)" }}
     >
-      <div className="max-w-[1920px] mx-auto px-[136px] py-[80px]">
+      <div className="max-w-[1920px] mx-auto
+        px-5 md:px-12 lg:px-[136px]
+        pt-10 pb-8 md:pt-14 md:pb-10 lg:pt-[80px] lg:pb-[80px]">
+
         {/* 로고 */}
-        <div className="mb-[76px]">
+        <div className="mb-8 md:mb-12 lg:mb-[76px]">
           <Image
             src="/images/bison-logo.svg"
             alt="BISON"
             width={200}
             height={50}
+            className="h-[30px] w-auto md:h-[38px] lg:h-[50px]"
           />
         </div>
 
         {/* 회사 정보 */}
-        <div className="flex flex-col gap-[23px] mb-[91px]">
+        <div className="flex flex-col gap-5 md:gap-6 lg:gap-[23px]
+          mb-8 md:mb-12 lg:mb-[91px]">
           {COMPANY_INFO.map(({ label, value, href }) => (
-            <div key={label} className="flex items-start gap-[170px]">
-              <span className="text-white text-2xl font-bold leading-[30px] w-[180px] flex-shrink-0">
+            <div key={label} className="flex flex-col md:flex-row md:items-start md:gap-[60px] lg:gap-[170px]">
+              <span className="text-white font-bold mb-1 md:mb-0
+                text-sm md:text-lg lg:text-2xl
+                md:w-[150px] lg:w-[180px] flex-shrink-0">
                 {label}
               </span>
               {href ? (
                 <a
                   href={href}
-                  className="text-white text-2xl font-normal leading-[30px] hover:opacity-70 transition-opacity"
+                  className="text-white font-normal hover:opacity-70 transition-opacity
+                    text-sm md:text-lg lg:text-2xl"
                 >
                   {value}
                 </a>
               ) : (
-                <span className="text-white text-2xl font-normal leading-[30px]">
+                <span className="text-white font-normal
+                  text-sm md:text-lg lg:text-2xl">
                   {value}
                 </span>
               )}
@@ -61,21 +70,25 @@ export default function Footer() {
         </div>
 
         {/* 구분선 */}
-        <div className="w-full h-px bg-white/20 mb-[42px]" />
+        <div className="w-full h-px bg-white/20
+          mb-5 md:mb-8 lg:mb-[42px]" />
 
         {/* 법적 고지 */}
-        <p className="text-white text-xl font-normal leading-relaxed mb-[59px] max-w-[1630px]">
+        <p className="text-white font-normal leading-relaxed
+          text-xs md:text-sm lg:text-xl
+          mb-6 md:mb-8 lg:mb-[59px]
+          max-w-[1630px] text-white/70">
           {LEGAL_TEXT}
         </p>
 
-        {/* 하단: 저작권 + 개인정보방침 */}
-        <div className="flex items-center gap-[56px]">
-          <span className="text-white text-xl font-normal">
+        {/* 저작권 + 개인정보방침 */}
+        <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-[56px]">
+          <span className="text-white/60 text-xs md:text-sm lg:text-xl font-normal">
             ⓒ 2026 BISON. All rights reserved.
           </span>
           <Link
             href="/privacy"
-            className="text-white text-xl font-normal hover:opacity-70 transition-opacity"
+            className="text-white/60 text-xs md:text-sm lg:text-xl font-normal hover:text-white transition-colors"
           >
             개인정보방침
           </Link>

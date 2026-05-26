@@ -14,7 +14,9 @@
       "Bash(tail *)",
       "Bash(echo *)",
       "Bash(mkdir *)",
-      "Bash(jq *)"
+      "Bash(jq *)",
+      "Bash(git commit -m 'feat: 반응형 웹 적용 \\(모바일/태블릿/데스크탑\\) *)",
+      "Bash(git push *)"
     ]
   }
 }
