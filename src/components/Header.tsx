@@ -33,7 +33,7 @@ export default function Header() {
   return (
     <>
       <header className="absolute top-0 left-0 right-0 z-50 bg-[#1a1a1a]
-        h-[64px] md:h-[100px] lg:h-[150px]
+        h-[32px] md:h-[50px] lg:h-[75px]
         flex items-center">
         <div className="w-full flex items-center justify-between
           px-5 md:px-10 lg:px-[88px]">
@@ -45,18 +45,18 @@ export default function Header() {
               alt="BISON"
               width={100}
               height={25}
-              className="h-[18px] w-auto md:h-[22px] lg:h-[25px]"
+              className="h-[12px] w-auto md:h-[14px] lg:h-[16px]"
               priority
             />
           </Link>
 
           {/* 데스크탑 네비게이션 */}
-          <nav className="hidden lg:flex items-center gap-[50px]">
+          <nav className="hidden lg:flex items-center gap-[30px]">
             {NAV_LINKS.map(({ label, href }) => (
               <Link
                 key={label}
                 href={href}
-                className="text-white text-2xl font-normal hover:opacity-70 transition-opacity whitespace-nowrap"
+                className="text-white text-base font-normal hover:opacity-70 transition-opacity whitespace-nowrap"
                 style={{ fontFamily: "var(--font-pretendard)" }}
               >
                 {label}
@@ -65,17 +65,17 @@ export default function Header() {
           </nav>
 
           {/* 데스크탑 우측 CTA */}
-          <div className="hidden lg:flex items-center gap-[50px]">
+          <div className="hidden lg:flex items-center gap-[30px]">
             <Link
               href="/contact"
-              className="text-white text-2xl font-bold hover:opacity-70 transition-opacity whitespace-nowrap"
+              className="text-white text-base font-bold hover:opacity-70 transition-opacity whitespace-nowrap"
               style={{ fontFamily: "var(--font-pretendard)" }}
             >
               문의하기
             </Link>
             <Link
               href="/estimate"
-              className="flex items-center justify-center gap-3 w-[200px] h-[60px] rounded-full text-white text-2xl font-bold whitespace-nowrap hover:opacity-80 transition-opacity"
+              className="flex items-center justify-center gap-2 w-[140px] h-[36px] rounded-full text-white text-sm font-bold whitespace-nowrap hover:opacity-80 transition-opacity"
               style={{
                 fontFamily: "var(--font-pretendard)",
                 backgroundColor: "rgba(62,62,62,0.3)",
@@ -85,7 +85,7 @@ export default function Header() {
               <ArrowIcon />
             </Link>
             <span
-              className="text-white text-2xl font-normal cursor-pointer hover:opacity-70 transition-opacity"
+              className="text-white text-base font-normal cursor-pointer hover:opacity-70 transition-opacity"
               style={{ fontFamily: "var(--font-pretendard)" }}
             >
               KOR
@@ -93,10 +93,10 @@ export default function Header() {
           </div>
 
           {/* 모바일 오른쪽: 문의 + 햄버거 */}
-          <div className="flex lg:hidden items-center gap-4">
+          <div className="flex lg:hidden items-center gap-3">
             <Link
               href="/contact"
-              className="text-white text-sm md:text-base font-bold hover:opacity-70 transition-opacity"
+              className="text-white text-xs md:text-sm font-bold hover:opacity-70 transition-opacity"
               style={{ fontFamily: "var(--font-pretendard)" }}
             >
               문의하기
@@ -118,14 +118,14 @@ export default function Header() {
           ${menuOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         {/* 메뉴 헤더 */}
-        <div className="flex items-center justify-between px-5 md:px-10 h-[64px] md:h-[100px] border-b border-white/10">
+        <div className="flex items-center justify-between px-5 md:px-10 h-[32px] md:h-[50px] border-b border-white/10">
           <Link href="/" onClick={() => setMenuOpen(false)}>
             <Image
               src="/images/bison-logo.svg"
               alt="BISON"
               width={100}
               height={25}
-              className="h-[18px] w-auto md:h-[22px]"
+              className="h-[12px] w-auto md:h-[14px]"
             />
           </Link>
           <button onClick={() => setMenuOpen(false)} aria-label="메뉴 닫기" className="text-white p-1">
