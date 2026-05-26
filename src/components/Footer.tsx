@@ -17,8 +17,9 @@ const COMPANY_INFO = [
   },
 ];
 
-const LEGAL_TEXT =
-  "본 서비스는 기업 고객을 대상으로 제공되며, 외부 기술·규격 및 지원 범위에 변동이 있을 수 있습니다. 제시 성능 수치는 고객 환경 및 공정 조건에 따라 상이할 수 있으며, 그에 상응하는 사후 관리에 의해 지속 적용됩니다. 기술자료, 이미지, 산출물 등은 협의된 목적 내에서만 활용 가능하며 임의 2차 배포는 제한됩니다.";
+const LEGAL_TEXT = `본 서비스는 기업 고객을 대상으로 제공되며, 외부 기술·규격 및 지원 범위에 변동이 있을 수 있습니다.
+제시 성능 수치는 고객 환경 및 공정 조건에 따라 상이할 수 있으며, 그에 상응하는 사후 관리에 의해 지속 적용됩니다.
+기술자료, 이미지, 산출물 등은 협의된 목적 내에서만 활용 가능하며 임의 2차 배포는 제한됩니다.`;
 
 export default function Footer() {
   return (
@@ -74,7 +75,7 @@ export default function Footer() {
           mb-2.5 md:mb-4 lg:mb-[21px]" />
 
         {/* 법적 고지 */}
-        <p className="text-white font-normal leading-relaxed
+        <p className="whitespace-pre-line text-white font-normal leading-relaxed
           text-[10px] md:text-xs lg:text-sm
           mb-3 md:mb-4 lg:mb-[30px]
           max-w-[1630px] text-white/70">
