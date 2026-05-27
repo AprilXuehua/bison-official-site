@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const NAV_LINKS = [
   { label: "솔루션", href: "/solution" },
@@ -15,6 +16,7 @@ const NAV_LINKS = [
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   // 화면 커지면 메뉴 자동 닫기
   useEffect(() => {
@@ -62,16 +64,20 @@ export default function Header() {
 
           {/* 데스크탑 네비게이션 */}
           <nav className="hidden lg:flex items-center gap-[30px]">
-            {NAV_LINKS.map(({ label, href }) => (
-              <Link
-                key={label}
-                href={href}
-                className="text-white text-base font-normal hover:opacity-70 transition-opacity whitespace-nowrap"
-                style={{ fontFamily: "var(--font-pretendard)" }}
-              >
-                {label}
-              </Link>
-            ))}
+            {NAV_LINKS.map(({ label, href }) => {
+              const isActive = pathname === href;
+              return (
+                <Link
+                  key={label}
+                  href={href}
+                  className={`text-white text-base whitespace-nowrap transition-opacity hover:opacity-70
+                    ${isActive ? "font-bold" : "font-normal"}`}
+                  style={{ fontFamily: "var(--font-pretendard)" }}
+                >
+                  {label}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* 데스크탑 우측 CTA */}
@@ -181,9 +187,6 @@ export default function Header() {
           >
             예상 견적 계산 <ArrowIcon />
           </Link>
-          <div className="text-center text-white/50 text-base" style={{ fontFamily: "var(--font-pretendard)" }}>
-            KOR
-          </div>
         </div>
       </div>
     </>

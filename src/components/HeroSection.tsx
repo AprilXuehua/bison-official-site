@@ -4,8 +4,8 @@ import Link from "next/link";
 export default function HeroSection() {
   return (
     <section className="relative w-full overflow-hidden
-      h-screen md:h-[800px] lg:h-[1080px]
-      min-h-[580px]">
+      h-[100vh] md:h-[600px] lg:h-[800px]
+      min-h-[500px]">
 
       {/* 배경 이미지 */}
       <Image
@@ -26,9 +26,10 @@ export default function HeroSection() {
         }}
       />
 
-      {/* 콘텐츠 — 중앙 정렬 */}
-      <div className="absolute inset-0 flex flex-col justify-center
-        px-5 md:px-12 lg:px-[163px]">
+      {/* 콘텐츠 — 하단 정렬 */}
+      <div className="absolute inset-0 flex flex-col justify-end
+        px-5 md:px-12 lg:px-[163px]
+        pb-10 md:pb-12 lg:pb-[80px]">
 
         {/* 헤드라인 */}
         <h1
@@ -40,7 +41,7 @@ export default function HeroSection() {
           style={{ fontFamily: "var(--font-pretendard)" }}
         >
           예측하기 어려운<br />
-          제조 환경까지 학습 하는 AI
+          제조 환경까지 학습하는 AI
         </h1>
 
         {/* 서브텍스트 */}
@@ -49,7 +50,7 @@ export default function HeroSection() {
             text-[15px] leading-relaxed
             md:text-[19px] md:leading-relaxed
             lg:text-[25px] lg:leading-[1.2] lg:tracking-[-1px]
-            mb-8 md:mb-5 lg:mb-6"
+            mb-12 md:mb-8 lg:mb-10"
           style={{ fontFamily: "var(--font-pretendard)" }}
         >
           우리는 정제된 데이터만 학습하지 않습니다.<br />
@@ -71,9 +72,9 @@ function HeroButton({ href, label, showArrow = true }: { href: string; label: st
     <Link
       href={href}
       className="flex items-center justify-center gap-2 text-white hover:bg-white/20 transition-colors
-        w-full md:w-[150px]
-        h-[52px] md:h-[30px] lg:h-[40px]
-        text-[15px] md:text-[10px] lg:text-[15px] font-medium"
+        w-full md:w-[180px]
+        h-[62px] md:h-[36px] lg:h-[48px]
+        text-[18px] md:text-[12px] lg:text-[18px] font-medium"
       style={{
         fontFamily: "var(--font-pretendard)",
         backgroundColor: "rgba(255,255,255,0.1)",
@@ -83,7 +84,7 @@ function HeroButton({ href, label, showArrow = true }: { href: string; label: st
     >
       {label}
       {showArrow && (
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+        <svg width="17" height="17" viewBox="0 0 14 14" fill="none">
           <path
             d="M1 7H13M13 7L7 1M13 7L7 13"
             stroke="white"
