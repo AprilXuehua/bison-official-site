@@ -106,8 +106,14 @@ export default function Header() {
             </span>
           </div>
 
-          {/* 모바일 오른쪽: 문의 + 햄버거 */}
+          {/* 모바일 오른쪽: KOR + 문의 + 햄버거 */}
           <div className="flex lg:hidden items-center gap-3">
+            <span
+              className="text-white text-xs md:text-sm font-normal cursor-pointer hover:opacity-70 transition-opacity"
+              style={{ fontFamily: "var(--font-pretendard)" }}
+            >
+              KOR
+            </span>
             <Link
               href="/contact"
               className="text-white text-xs md:text-sm font-bold hover:opacity-70 transition-opacity"
