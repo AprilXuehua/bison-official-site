@@ -26,10 +26,9 @@ export default function HeroSection() {
         }}
       />
 
-      {/* 콘텐츠 — 하단 정렬 */}
-      <div className="absolute inset-0 flex flex-col justify-end
-        px-5 md:px-12 lg:px-[163px]
-        pb-6 md:pb-8 lg:pb-[64px]">
+      {/* 콘텐츠 — 중앙 정렬 */}
+      <div className="absolute inset-0 flex flex-col justify-center
+        px-5 md:px-12 lg:px-[163px]">
 
         {/* 헤드라인 */}
         <h1
