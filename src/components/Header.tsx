@@ -85,10 +85,14 @@ export default function Header() {
             </Link>
             <Link
               href="/estimate"
-              className="flex items-center justify-center gap-2 w-[140px] h-[36px] rounded-full text-white text-sm font-bold whitespace-nowrap hover:opacity-80 transition-opacity"
+              className="flex items-center justify-center gap-2 w-[140px] h-[36px] text-white text-sm font-bold whitespace-nowrap hover:opacity-80 transition-opacity"
               style={{
                 fontFamily: "var(--font-pretendard)",
-                backgroundColor: "rgba(62,62,62,0.3)",
+                backgroundColor: "#3775FF",
+                backdropFilter: "blur(4px)",
+                WebkitBackdropFilter: "blur(4px)",
+                borderRadius: "30px",
+                letterSpacing: "-0.1em",
               }}
             >
               예상 견적 계산

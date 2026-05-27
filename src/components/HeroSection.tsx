@@ -29,15 +29,15 @@ export default function HeroSection() {
       {/* 콘텐츠 — 하단 정렬 */}
       <div className="absolute inset-0 flex flex-col justify-end
         px-5 md:px-12 lg:px-[163px]
-        pb-12 md:pb-16 lg:pb-[128px]">
+        pb-6 md:pb-8 lg:pb-[64px]">
 
         {/* 헤드라인 */}
         <h1
           className="text-white font-bold
-            text-[38px] leading-[1.15] tracking-[-1.5px]
-            md:text-[64px] md:leading-[1.15] md:tracking-[-3px]
-            lg:text-[100px] lg:leading-[1.19] lg:tracking-[-5px]
-            mb-4 md:mb-6 lg:mb-8"
+            text-[19px] leading-[1.15] tracking-[-0.75px]
+            md:text-[32px] md:leading-[1.15] md:tracking-[-1.5px]
+            lg:text-[50px] lg:leading-[1.19] lg:tracking-[-2.5px]
+            mb-2 md:mb-3 lg:mb-4"
           style={{ fontFamily: "var(--font-pretendard)" }}
         >
           예측하기 어려운<br />
@@ -47,10 +47,10 @@ export default function HeroSection() {
         {/* 서브텍스트 */}
         <p
           className="text-white font-normal
-            text-[15px] leading-relaxed
-            md:text-[24px] md:leading-relaxed
-            lg:text-[40px] lg:leading-[1.2] lg:tracking-[-2px]
-            mb-8 md:mb-10 lg:mb-12"
+            text-[10px] leading-relaxed
+            md:text-[14px] md:leading-relaxed
+            lg:text-[20px] lg:leading-[1.2] lg:tracking-[-1px]
+            mb-4 md:mb-5 lg:mb-6"
           style={{ fontFamily: "var(--font-pretendard)" }}
         >
           우리는 정제된 데이터만 학습하지 않습니다.<br />
@@ -58,8 +58,8 @@ export default function HeroSection() {
         </p>
 
         {/* CTA 버튼 그룹 */}
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-[37px]">
-          <HeroButton href="/cases" label="적용사례" />
+        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 lg:gap-[18px]">
+          <HeroButton href="/cases" label="적용 사례 보기" />
           <HeroButton href="/solution" label="솔루션 소개" />
         </div>
       </div>
@@ -71,13 +71,15 @@ function HeroButton({ href, label }: { href: string; label: string }) {
   return (
     <Link
       href={href}
-      className="flex items-center justify-center gap-3 rounded-full text-white font-medium hover:bg-white/20 transition-colors
-        w-full sm:w-[220px] lg:w-[300px]
-        h-[52px] lg:h-[80px]
-        text-[15px] lg:text-[30px]"
+      className="flex items-center justify-center gap-2 text-white hover:bg-white/20 transition-colors
+        w-full sm:w-[150px] lg:w-[150px]
+        h-[30px] lg:h-[40px]
+        text-[10px] lg:text-[15px] font-medium"
       style={{
         fontFamily: "var(--font-pretendard)",
         backgroundColor: "rgba(255,255,255,0.1)",
+        borderRadius: "25px",
+        letterSpacing: "-0.1em",
       }}
     >
       {label}
