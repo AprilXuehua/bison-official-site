@@ -18,8 +18,8 @@ export default function ScrollToTop() {
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       aria-label="맨 위로 가기"
       className="fixed z-50 rounded-full bg-white flex items-center justify-center shadow-lg hover:bg-gray-100 transition-all group
-        w-[24px] h-[24px] bottom-4 right-4
-        md:w-[36px] md:h-[36px] md:bottom-6 md:right-6
+        w-[40px] h-[40px] bottom-4 right-4
+        md:w-[40px] md:h-[40px] md:bottom-6 md:right-6
         lg:w-[50px] lg:h-[50px] lg:bottom-[44px] lg:right-[44px]"
     >
       <svg
@@ -32,7 +32,7 @@ export default function ScrollToTop() {
         <path
           d="M20 45V5M20 5L4 21M20 5L36 21"
           stroke="#1a1a1a"
-          strokeWidth="3"
+          strokeWidth="4"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
