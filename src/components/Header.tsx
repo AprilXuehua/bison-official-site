@@ -33,7 +33,7 @@ export default function Header() {
   return (
     <>
       <header className="absolute top-0 left-0 right-0 z-50 bg-[#1a1a1a]
-        h-[32px] md:h-[50px] lg:h-[75px]
+        h-[50px] md:h-[50px] lg:h-[75px]
         flex items-center">
         <div className="w-full flex items-center justify-between
           px-5 md:px-10 lg:px-[88px]">
@@ -118,7 +118,7 @@ export default function Header() {
           ${menuOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         {/* 메뉴 헤더 */}
-        <div className="flex items-center justify-between px-5 md:px-10 h-[32px] md:h-[50px] border-b border-white/10">
+        <div className="flex items-center justify-between px-5 md:px-10 h-[50px] md:h-[50px] border-b border-white/10">
           <Link href="/" onClick={() => setMenuOpen(false)}>
             <Image
               src="/images/bison-logo.svg"
