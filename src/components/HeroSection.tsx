@@ -33,9 +33,9 @@ export default function HeroSection() {
         {/* 헤드라인 */}
         <h1
           className="text-white font-bold
-            text-[19px] leading-[1.15] tracking-[-0.75px]
-            md:text-[32px] md:leading-[1.15] md:tracking-[-1.5px]
-            lg:text-[50px] lg:leading-[1.19] lg:tracking-[-2.5px]
+            text-[24px] leading-[1.15] tracking-[-0.75px]
+            md:text-[37px] md:leading-[1.15] md:tracking-[-1.5px]
+            lg:text-[55px] lg:leading-[1.19] lg:tracking-[-2.5px]
             mb-2 md:mb-3 lg:mb-4"
           style={{ fontFamily: "var(--font-pretendard)" }}
         >
@@ -46,9 +46,9 @@ export default function HeroSection() {
         {/* 서브텍스트 */}
         <p
           className="text-white font-normal
-            text-[10px] leading-relaxed
-            md:text-[14px] md:leading-relaxed
-            lg:text-[20px] lg:leading-[1.2] lg:tracking-[-1px]
+            text-[15px] leading-relaxed
+            md:text-[19px] md:leading-relaxed
+            lg:text-[25px] lg:leading-[1.2] lg:tracking-[-1px]
             mb-4 md:mb-5 lg:mb-6"
           style={{ fontFamily: "var(--font-pretendard)" }}
         >
