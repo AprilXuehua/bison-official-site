@@ -59,25 +59,25 @@ export default function HeroSection() {
 
         {/* CTA 버튼 그룹 */}
         <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 lg:gap-[18px]">
-          <HeroButton href="/cases" label="적용 사례 보기" showArrow={false} />
-          <HeroButton href="/solution" label="솔루션 소개" />
+          <HeroButton href="/cases" label="적용 사례 보기" showArrow={false} hoverClass="hover:bg-white hover:text-[#1a1a1a]" />
+          <HeroButton href="/solution" label="솔루션 소개" hoverClass="hover:bg-white hover:text-[#1a1a1a]" />
         </div>
       </div>
     </section>
   );
 }
 
-function HeroButton({ href, label, showArrow = true }: { href: string; label: string; showArrow?: boolean }) {
+function HeroButton({ href, label, showArrow = true, hoverClass = "hover:bg-white/20" }: { href: string; label: string; showArrow?: boolean; hoverClass?: string }) {
   return (
     <Link
       href={href}
-      className="flex items-center justify-center gap-2 text-white hover:bg-white/20 transition-colors
+      className={`flex items-center justify-center gap-2 text-white bg-white/10 transition-colors
         w-full md:w-[180px]
         h-[62px] md:h-[36px] lg:h-[48px]
-        text-[18px] md:text-[12px] lg:text-[18px] font-medium"
+        text-[18px] md:text-[12px] lg:text-[18px] font-medium
+        ${hoverClass}`}
       style={{
         fontFamily: "var(--font-pretendard)",
-        backgroundColor: "rgba(255,255,255,0.1)",
         borderRadius: "25px",
         letterSpacing: "-0.1em",
       }}
@@ -87,7 +87,7 @@ function HeroButton({ href, label, showArrow = true }: { href: string; label: st
         <svg width="17" height="17" viewBox="0 0 14 14" fill="none">
           <path
             d="M1 7H13M13 7L7 1M13 7L7 13"
-            stroke="white"
+            stroke="currentColor"
             strokeWidth="1.5"
             strokeLinecap="round"
             strokeLinejoin="round"
