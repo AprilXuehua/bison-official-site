@@ -8,11 +8,11 @@ import ScrollToTop from "@/components/ScrollToTop";
 export default function Home() {
   return (
     <div className="bg-[#1a1a1a]">
-      {/* 히어로 섹션 (헤더가 절대 위치로 히어로 위에 올라감) */}
-      <div className="relative">
-        <Header />
-        <HeroSection />
-      </div>
+      {/* 헤더 (fixed 고정) */}
+      <Header />
+
+      {/* 히어로 섹션 */}
+      <HeroSection />
 
       {/* 파트너 & 클라이언트 섹션 */}
       <ClientPartnerSection />

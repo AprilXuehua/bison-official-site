@@ -14,6 +14,7 @@ const NAV_LINKS = [
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   // 화면 커지면 메뉴 자동 닫기
   useEffect(() => {
@@ -30,11 +31,20 @@ export default function Header() {
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
 
+  // 스크롤 감지 → 글라스모피즘 전환
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <>
-      <header className="absolute top-0 left-0 right-0 z-50 bg-[#1a1a1a]
-        h-[50px] md:h-[50px] lg:h-[75px]
-        flex items-center">
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300
+          h-[50px] md:h-[50px] lg:h-[75px] flex items-center
+          ${scrolled ? "bg-[#1a1a1a]/70 backdrop-blur-md" : "bg-[#1a1a1a]"}`}
+      >
         <div className="w-full flex items-center justify-between
           px-5 md:px-10 lg:px-[88px]">
 
