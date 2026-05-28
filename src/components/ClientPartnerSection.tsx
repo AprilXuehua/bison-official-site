@@ -1,8 +1,8 @@
 import Image from "next/image";
 
 const CLIENT_LOGOS = [
-  { src: "/images/dyauto.png",    alt: "DY오토",  width: 300, height: 113, heightClass: "max-h-[10px] md:max-h-[9px] lg:max-h-[40px]" },
-  { src: "/images/lk-samsung.png",alt: "LK삼양",  width: 259, height: 77, heightClass: "max-h-[10px] md:max-h-[9px] lg:max-h-[28px]"  },
+  { src: "/images/dyauto.png",    alt: "DY오토",  width: 300, height: 113, heightClass: "max-h-[15px] md:max-h-[15px] lg:max-h-[40px]" },
+  { src: "/images/lk-samsung.png",alt: "LK삼양",  width: 259, height: 77, heightClass: "max-h-[15px] md:max-h-[15px] lg:max-h-[28px]"  },
   { src: "/images/jinhap.png",    alt: "진합",    width: 300, height: 130 },
   { src: "/images/imk.png",       alt: "IMK",     width: 111, height: 95  },
 ];
