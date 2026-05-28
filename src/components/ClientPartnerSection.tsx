@@ -8,9 +8,9 @@ const CLIENT_LOGOS = [
 ];
 
 const PARTNER_LOGOS = [
-  { src: "/images/gyeonggi-innovation.png", alt: "경기창조혁신센터", width: 515, height: 92, heightClass: "max-h-[7px] md:max-h-[9px] lg:max-h-[21px]" },
+  { src: "/images/gyeonggi-innovation.png", alt: "경기창조혁신센터", width: 515, height: 92, heightClass: "max-h-[15px] md:max-h-[9px] lg:max-h-[21px]" },
   { src: "/images/sungkyunkwan.png",         alt: "성균관대학교",    width: 405, height: 110 },
-  { src: "/images/kyonggi.png",              alt: "경기대학교",      width: 300, height: 112, heightClass: "max-h-[7px] md:max-h-[9px] lg:max-h-[30px]" },
+  { src: "/images/kyonggi.png",              alt: "경기대학교",      width: 300, height: 112, heightClass: "max-h-[15px] md:max-h-[9px] lg:max-h-[30px]" },
   { src: "/images/naratech.png",             alt: "나라테크",        width: 405, height: 100 },
 ];
 
