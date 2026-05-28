@@ -1,16 +1,16 @@
 import Image from "next/image";
 
 const CLIENT_LOGOS = [
-  { src: "/images/dyauto.png",    alt: "DY오토",  width: 300, height: 113, heightClass: "max-h-[15px] md:max-h-[15px] lg:max-h-[40px]" },
-  { src: "/images/lk-samsung.png",alt: "LK삼양",  width: 259, height: 77, heightClass: "max-h-[15px] md:max-h-[15px] lg:max-h-[28px]"  },
+  { src: "/images/dyauto.png",    alt: "DY오토",  width: 300, height: 113, heightClass: "max-h-[25px] md:max-h-[20px] lg:max-h-[40px]" },
+  { src: "/images/lk-samsung.png",alt: "LK삼양",  width: 259, height: 77, heightClass: "max-h-[25px] md:max-h-[20px] lg:max-h-[28px]"  },
   { src: "/images/jinhap.png",    alt: "진합",    width: 300, height: 130 },
   { src: "/images/imk.png",       alt: "IMK",     width: 111, height: 95  },
 ];
 
 const PARTNER_LOGOS = [
-  { src: "/images/gyeonggi-innovation.png", alt: "경기창조혁신센터", width: 515, height: 92, heightClass: "max-h-[15px] md:max-h-[9px] lg:max-h-[21px]" },
+  { src: "/images/gyeonggi-innovation.png", alt: "경기창조혁신센터", width: 515, height: 92, heightClass: "max-h-[15px] md:max-h-[15px] lg:max-h-[21px]" },
   { src: "/images/sungkyunkwan.png",         alt: "성균관대학교",    width: 405, height: 110 },
-  { src: "/images/kyonggi.png",              alt: "경기대학교",      width: 300, height: 112, heightClass: "max-h-[15px] md:max-h-[9px] lg:max-h-[30px]" },
+  { src: "/images/kyonggi.png",              alt: "경기대학교",      width: 300, height: 112, heightClass: "max-h-[15px] md:max-h-[15px] lg:max-h-[30px]" },
   { src: "/images/naratech.png",             alt: "나라테크",        width: 405, height: 100 },
 ];
 
@@ -37,7 +37,7 @@ function LogoGroup({ label, logos }: { label: string; logos: LogoItem[] }) {
             alt={logo.alt}
             width={logo.width}
             height={logo.height}
-            className={`object-contain w-auto ${logo.heightClass ?? "max-h-[15px] md:max-h-[15px] lg:max-h-[35px]"}`}
+            className={`object-contain w-auto ${logo.heightClass ?? "max-h-[25px] md:max-h-[20px] lg:max-h-[35px]"}`}
           />
         </div>
       ))}
