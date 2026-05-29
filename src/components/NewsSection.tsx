@@ -25,8 +25,8 @@ export default function NewsSection({ news }: { news: NewsItem[] }) {
       <div
         className="max-w-[1750px] mx-auto text-center
         px-5 md:px-12 lg:px-[85px]
-        pt-[50px] md:pt-[65px] lg:pt-[51px]
-        pb-[80px] md:pb-[120px] lg:pb-[51px]"
+        pt-[50px] md:pt-[65px] lg:pt-[120px]
+        pb-[80px] md:pb-[120px] lg:pb-[180px]"
       >
         {/* 섹션 라벨 */}
         <p
@@ -165,39 +165,23 @@ function NewsCard({ item }: { item: NewsItem }) {
       )}
 
       {/* frosted glass + 텍스트 영역 */}
-      <div className="absolute" style={{ left: "7px", top: "142px", width: "calc(100% - 14px)" }}>
-        <div
-          className="absolute rounded-[14px]"
-          style={{
-            left: "6px",
-            right: "6px",
-            top: "6px",
-            height: "79px",
-            backdropFilter: "blur(9px)",
-            backgroundColor: "rgba(255,255,255,0.3)",
-          }}
-        />
+      <div
+        className="absolute flex flex-col gap-[6px] rounded-[14px] px-[14px] py-[12px]"
+        style={{
+          left: "13px",
+          right: "13px",
+          bottom: "13px",
+          backdropFilter: "blur(9px)",
+          backgroundColor: "rgba(255,255,255,0.3)",
+        }}
+      >
         <p
-          className="absolute font-bold text-black leading-tight"
-          style={{
-            left: "20px",
-            top: "27px",
-            right: "90px",
-            fontSize: "17px",
-            letterSpacing: "-0.84px",
-          }}
+          className="font-bold text-black leading-tight text-left line-clamp-1"
+          style={{ fontSize: "15px", letterSpacing: "-0.84px" }}
         >
           {item.title}
         </p>
-        <p
-          className="absolute text-black"
-          style={{
-            right: "20px",
-            top: "51px",
-            fontSize: "12px",
-            whiteSpace: "nowrap",
-          }}
-        >
+        <p className="text-black text-right whitespace-nowrap" style={{ fontSize: "12px" }}>
           {formatNewsDate(item.published_at)}
         </p>
       </div>
