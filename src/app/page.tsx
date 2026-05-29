@@ -5,8 +5,11 @@ import PlaceholderSection from "@/components/PlaceholderSection";
 import NewsSection from "@/components/NewsSection";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import { fetchNews } from "@/lib/news";
 
-export default function Home() {
+export default async function Home() {
+  const news = await fetchNews(6);
+
   return (
     <div className="bg-[#1a1a1a]">
       {/* 헤더 (fixed 고정) */}
@@ -22,7 +25,7 @@ export default function Home() {
       <PlaceholderSection />
 
       {/* 뉴스 섹션 */}
-      <NewsSection />
+      <NewsSection news={news} />
 
       {/* 푸터 */}
       <Footer />
