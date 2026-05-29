@@ -7,6 +7,14 @@ import { formatNewsDate } from "@/lib/news";
 
 const ITEMS_PER_PAGE = 9;
 
+function getPageNumbers(current: number, total: number): (number | "...")[] {
+  if (total <= 4) return Array.from({ length: total }, (_, i) => i);
+  const pages: (number | "...")[] = [0, 1, 2];
+  if (total > 4) pages.push("...");
+  pages.push(total - 1);
+  return pages;
+}
+
 export default function NewsPagination({ news }: { news: NewsItem[] }) {
   const [currentPage, setCurrentPage] = useState(0);
   const totalPages = Math.ceil(news.length / ITEMS_PER_PAGE);
@@ -37,53 +45,60 @@ export default function NewsPagination({ news }: { news: NewsItem[] }) {
       </div>
 
       {/* 페이지 네비게이션 */}
-      {totalPages >= 1 && (
-        <div className="flex items-center justify-center gap-[12px] mt-[60px]">
-          {/* 이전 버튼 */}
+      <div className="flex items-center justify-center gap-[8px] mt-[60px]">
+        {/* 이전 버튼 - 1페이지에서는 숨김 */}
+        {currentPage > 0 && (
           <button
             onClick={handlePrev}
-            disabled={currentPage === 0}
-            className="w-[40px] h-[40px] rounded-full border-2 border-black bg-white flex items-center justify-center transition-opacity duration-200"
-            style={{ opacity: currentPage === 0 ? 0.3 : 1 }}
+            className="w-[36px] h-[36px] flex items-center justify-center transition-opacity hover:opacity-60"
             aria-label="이전"
           >
-            <svg width="9" height="16" viewBox="0 0 9 16" fill="none">
-              <path d="M7 2L2 8L7 14" stroke="black" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+            <svg width="8" height="14" viewBox="0 0 8 14" fill="none">
+              <path d="M6 2L2 7L6 12" stroke="#888" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
+        )}
 
-          {/* 페이지 번호 */}
-          {Array.from({ length: totalPages }).map((_, i) => (
-            <button
-              key={i}
-              onClick={() => goToPage(i)}
-              className="w-[40px] h-[40px] rounded-full text-[15px] font-bold transition-all duration-200"
-              style={{
-                backgroundColor: i === currentPage ? "#3775FF" : "transparent",
-                color: i === currentPage ? "white" : "black",
-                border: i === currentPage ? "none" : "2px solid black",
-                opacity: i === currentPage ? 1 : 0.4,
-              }}
-              aria-label={`${i + 1}페이지`}
+        {/* 페이지 번호 */}
+        {getPageNumbers(currentPage, totalPages).map((item, i) =>
+          item === "..." ? (
+            <span
+              key={`ellipsis-${i}`}
+              className="w-[36px] h-[36px] flex items-center justify-center text-[15px]"
+              style={{ color: "#aaa" }}
             >
-              {i + 1}
+              ···
+            </span>
+          ) : (
+            <button
+              key={item}
+              onClick={() => goToPage(item as number)}
+              className="w-[36px] h-[36px] rounded-full text-[15px] font-medium transition-all duration-150"
+              style={
+                item === currentPage
+                  ? { backgroundColor: "#3775FF", color: "white", fontWeight: 700 }
+                  : { color: "#aaa" }
+              }
+              aria-label={`${(item as number) + 1}페이지`}
+            >
+              {(item as number) + 1}
             </button>
-          ))}
+          )
+        )}
 
-          {/* 다음 버튼 */}
+        {/* 다음 버튼 */}
+        {currentPage < totalPages - 1 && (
           <button
             onClick={handleNext}
-            disabled={currentPage === totalPages - 1}
-            className="w-[40px] h-[40px] rounded-full border-2 border-black bg-white flex items-center justify-center transition-opacity duration-200"
-            style={{ opacity: currentPage === totalPages - 1 ? 0.3 : 1 }}
+            className="w-[36px] h-[36px] flex items-center justify-center transition-opacity hover:opacity-60"
             aria-label="다음"
           >
-            <svg width="9" height="16" viewBox="0 0 9 16" fill="none">
-              <path d="M2 2L7 8L2 14" stroke="black" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+            <svg width="8" height="14" viewBox="0 0 8 14" fill="none">
+              <path d="M2 2L6 7L2 12" stroke="#888" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 }
