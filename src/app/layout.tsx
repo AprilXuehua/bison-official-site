@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "BISON — 지속 가능한 스마트 팩토리를 위한 단 하나의 선택",
@@ -14,7 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" className="h-full">
-      <body className="min-h-full flex flex-col bg-[#1a1a1a]">{children}</body>
+      <body className="min-h-full flex flex-col bg-[#1a1a1a]">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }

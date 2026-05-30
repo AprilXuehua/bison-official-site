@@ -21,6 +21,8 @@ export default function ContactForm() {
     privacy: false,
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -32,11 +34,30 @@ export default function ContactForm() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: 실제 제출 로직 연동
-    console.log("문의 제출:", form);
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.error ?? "오류가 발생했습니다. 다시 시도해주세요.");
+        return;
+      }
+
+      setSubmitted(true);
+    } catch {
+      setError("네트워크 오류가 발생했습니다. 다시 시도해주세요.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
@@ -153,18 +174,28 @@ export default function ContactForm() {
         </label>
         <button
           type="submit"
-          className="flex-shrink-0 text-white font-normal hover:opacity-80 transition-opacity"
+          disabled={loading}
+          className="flex-shrink-0 text-white font-normal transition-opacity"
           style={{
             backgroundColor: "#3775FF",
             borderRadius: "30px",
             padding: "0 24px",
             height: "36px",
             fontSize: "18px",
+            opacity: loading ? 0.6 : 1,
+            cursor: loading ? "not-allowed" : "pointer",
           }}
         >
-          제출하기
+          {loading ? "제출 중..." : "제출하기"}
         </button>
       </div>
+
+      {/* 에러 메시지 */}
+      {error && (
+        <p className="mt-[12px] text-right" style={{ fontSize: "14px", color: "#ff0004" }}>
+          {error}
+        </p>
+      )}
     </form>
   );
 }
